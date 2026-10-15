@@ -9,6 +9,8 @@ package com.mycompany.concesionariadeautos;
  * @author alfuxuns
  */
 public class ConcesionariaDeAutos {
+    
+    System.out.println("Heo world!");
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
