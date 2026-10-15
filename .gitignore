@@ -1,0 +1,18 @@
+
+# Maven
+/target/
+
+# NetBeans
+/nbproject/private/
+/nbactions-private.xml
+
+# Persistencia
+/data/*
+!/data/.gitkeep
+
+# Archivos temporales
+*.class
+*.log
+*.swp
+*.swo
+*~
