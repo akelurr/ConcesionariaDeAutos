@@ -4,10 +4,29 @@
  */
 package com.mycompany.concesionariadeautos.modelo;
 
+import com.mycompany.concesionariadeautos.enums.Marca;
+import com.mycompany.concesionariadeautos.enums.Modelo;
+
 /**
  *
  * @author alfuxuns
  */
-public class AutoElectrico extends Vehiculo{
-    
-}
+    public class AutoElectrico extends Auto{
+        
+        public AutoElectrico(Marca marca, Modelo modelo, int caballospotencia) {
+            super(marca, modelo, caballospotencia);
+        }
+        @Override
+        public double precioDef(){
+            if (valor == 0){
+                 if (modelo == Modelo.Exclusivo){
+                this.valor = valor + 30000;
+                }
+                else{
+                    this.valor = valor + 15000;
+                }
+                 valor = valor + 45000;
+            }
+            return valor;
+        }
+    }
