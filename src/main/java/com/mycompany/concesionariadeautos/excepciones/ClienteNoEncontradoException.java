@@ -8,13 +8,16 @@ package com.mycompany.concesionariadeautos.excepciones;
  *
  * @author alfuxuns
  */
-public class ClienteNoEncontradoException extends Exception {
-
+public class ClienteNoEncontradoException extends RuntimeException {
+    
+ 
     /**
      * Creates a new instance of <code>ClienteNoEncontradoException</code>
      * without detail message.
      */
     public ClienteNoEncontradoException() {
+      
+
     }
 
     /**
