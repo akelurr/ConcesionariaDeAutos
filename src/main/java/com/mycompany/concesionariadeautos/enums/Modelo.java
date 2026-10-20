@@ -8,6 +8,8 @@ package com.mycompany.concesionariadeautos.enums;
  *
  * @author berna
  */
-public class Modelo {
-    
+public enum Modelo {
+    EXCLUSIVO,
+    GENERICO,
+
 }

@@ -9,5 +9,8 @@ package com.mycompany.concesionariadeautos.interfaces;
  * @author alfuxuns
  */
 public interface Rankeable {
+    double obtenerPuntajeRanking();
+
+    String obtenerDescripcionRanking();
     
 }

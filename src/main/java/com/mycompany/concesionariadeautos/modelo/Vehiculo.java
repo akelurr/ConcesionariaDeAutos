@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.concesionariadeautos.modelo;
-
 import com.mycompany.concesionariadeautos.enums.Marca;
 import com.mycompany.concesionariadeautos.enums.Modelo;
 import com.mycompany.concesionariadeautos.enums.CondicionVehiculo;
@@ -14,28 +13,26 @@ import com.mycompany.concesionariadeautos.enums.CondicionVehiculo;
  */
  abstract class Vehiculo{
 
-
         protected Marca marca;
         protected Modelo modelo;
-        protected int caballospotencia;
+        protected int caballosPotencia;
         protected int kilometraje;
-        protected boolean frenosmalos;
-        protected boolean neumaticosmalos;
-        protected String dueno;
+        protected boolean frenosMalos;
+        protected boolean neumaticosMalos;
+        protected String duenio;
         protected String concesionaria;
         protected CondicionVehiculo condicion;
         protected int valor;
         protected String matricula;
         
-        
         public Vehiculo(Marca marca, Modelo modelo, int caballospotencia){
             this.marca = marca;
             this.modelo = modelo;
-            this.caballospotencia = caballospotencia;
+            this.caballosPotencia = caballospotencia;
             this.kilometraje =  0;
-            this.frenosmalos = false;
-            this.neumaticosmalos = false;
-            this.dueno = null;
+            this.frenosMalos = false;
+            this.neumaticosMalos = false;
+            this.duenio = null;
             this.concesionaria = null;
             this.condicion = CondicionVehiculo.NUEVO;
             this.valor = 0;
@@ -43,7 +40,7 @@ import com.mycompany.concesionariadeautos.enums.CondicionVehiculo;
         }  //Constructor
 
         public void conducir(int kilometros){
-            if(dueno == null){
+            if(duenio == null){
                 System.out.print("Todavía no puedes conducir"); // El auto no es utilizable 
             }
             else {
@@ -67,4 +64,37 @@ import com.mycompany.concesionariadeautos.enums.CondicionVehiculo;
     }
 
         public abstract double precioDef();        
+
+        protected double precioModelo() {
+            if (modelo == Modelo.EXCLUSIVO) {
+                return 30000;
+            }
+
+            return 15000;
+
+        }
+
+        public double precioFinal() {
+            double precio = precioDef();
+
+            // Descuento por kilometraje
+            if (kilometraje > 100000) {
+                precio *= 0.80;
+            } else if ( kilometraje > 50000){
+                precio *= 0.90;
+            }
+
+            // Descuento por desperfectos
+
+            if (frenosMalos) {
+                precio -= 2000;
+            }
+            if (neumaticosMalos) {
+                precio -= 1500;
+            }
+
+            return Math.max(0, precio);
+
+
+        }
 }

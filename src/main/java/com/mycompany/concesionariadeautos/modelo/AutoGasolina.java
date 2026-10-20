@@ -11,23 +11,14 @@ import com.mycompany.concesionariadeautos.enums.Modelo;
  *
  * @author alfuxuns
  */
-    public class AutoGasolina extends Auto{
+    public class AutoGasolina extends Vehiculo{
         
         public AutoGasolina(Marca marca, Modelo modelo, int caballospotencia) {
             super(marca, modelo, caballospotencia);
         }
         @Override
         public double precioDef(){
-            if (valor == 0){
-                 if (modelo == Modelo.Exclusivo){
-                this.valor = valor + 30000;
-                }
-                else{
-                    this.valor = valor + 15000;
-                }
-                 valor = valor + 35000;
-            }
-            return valor;
+            return precioModelo() + 35000;
         }
         
     }

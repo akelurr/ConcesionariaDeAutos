@@ -8,6 +8,9 @@ package com.mycompany.concesionariadeautos.enums;
  *
  * @author alfuxuns
  */
-public enum EstadoVehiculo {
-    
+public enum EstadoVehiculo { 
+    DISPONIBLE,
+    RESERVADO,
+    VENDIDO,
+    EN_MANTENIMIENTO
 }

@@ -9,5 +9,6 @@ package com.mycompany.concesionariadeautos.interfaces;
  * @author alfuxuns
  */
 public interface Registrable {
-    
+    int getId();
+    String obtenerDatosRegistro();
 }

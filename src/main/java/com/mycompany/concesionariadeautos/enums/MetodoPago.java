@@ -9,5 +9,11 @@ package com.mycompany.concesionariadeautos.enums;
  * @author alfuxuns
  */
 public enum MetodoPago {
-    
+    EFECTIVO,
+    TRANSFERENCIA_BANCARIA,
+    TARJETA_DEBITO,
+    TARJETA_CREDITO,
+    CREDITO_AUTOMOTRIZ
 }
+
+

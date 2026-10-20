@@ -8,13 +8,14 @@ package com.mycompany.concesionariadeautos.excepciones;
  *
  * @author alfuxuns
  */
-public class VehiculoNoDisponibleException extends Exception {
+public class VehiculoNoDisponibleException extends RuntimeException {
 
     /**
      * Creates a new instance of <code>VehiculoNoDisponibleException</code>
      * without detail message.
      */
     public VehiculoNoDisponibleException() {
+        
     }
 
     /**
@@ -25,5 +26,7 @@ public class VehiculoNoDisponibleException extends Exception {
      */
     public VehiculoNoDisponibleException(String msg) {
         super(msg);
+        
+        
     }
 }

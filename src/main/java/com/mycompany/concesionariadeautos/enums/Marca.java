@@ -8,6 +8,19 @@ package com.mycompany.concesionariadeautos.enums;
  *
  * @author berna
  */
-public class Marca {
-    
+public enum Marca {
+    TOYOTA,
+    HYUNdAI,
+    KIA,
+    CHEVROLET,
+    NISSAN,
+    SUZUKI,
+    MAZDA,
+    FORD,
+    VOLKSWAGEN,
+    PEUGEOT,
+    BMW,
+    MERCEDEZ_BENZ,
+    BYD,
+    TESLA
 }

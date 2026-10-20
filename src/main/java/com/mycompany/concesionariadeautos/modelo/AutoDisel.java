@@ -3,11 +3,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.concesionariadeautos.modelo;
-
+import com.mycompany.concesionariadeautos.enums.Modelo;
+import com.mycompany.concesionariadeautos.enums.Marca;
 /**
  *
  * @author alfuxuns
  */
 public class AutoDisel extends Vehiculo {
+
+    public AutoDisel(Marca marca, Modelo modelo, int caballosPotencia){
+        super(marca, modelo, caballosPotencia);
+
+    }
+
+    @Override
+    public double precioDef(){
+        return precioModelo() + 40000;
+    }
+
+    
     
 }
