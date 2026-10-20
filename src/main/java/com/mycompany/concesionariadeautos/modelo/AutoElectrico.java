@@ -17,16 +17,7 @@ import com.mycompany.concesionariadeautos.enums.Modelo;
         }
         @Override
         public double precioDef(){
-            if (valor == 0){
-                 if (modelo == Modelo.EXCLUSIVO){
-                this.valor = valor + 30000;
-                }
-                else{
-                    this.valor = valor + 15000;
-                }
-                 valor = valor + 45000;
-            }
-            return valor;
+            return precioModelo() + 45000;
         }
 
 
