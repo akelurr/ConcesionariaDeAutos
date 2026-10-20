@@ -4,13 +4,17 @@
  */
 package com.mycompany.concesionariadeautos.modelo;
 
-import java.util.Scanner;
+import com.mycompany.concesionariadeautos.enums.Marca;
+import com.mycompany.concesionariadeautos.enums.Modelo;
+import com.mycompany.concesionariadeautos.enums.CondicionVehiculo;
 
 /**
  *
  * @author alfuxuns
  */
- abstract class Auto implements PrecioBase{
+ abstract class Vehiculo{
+
+
         protected Marca marca;
         protected Modelo modelo;
         protected int caballospotencia;
@@ -19,12 +23,12 @@ import java.util.Scanner;
         protected boolean neumaticosmalos;
         protected String dueno;
         protected String concesionaria;
-        protected boolean nuevo;
+        protected CondicionVehiculo condicion;
         protected int valor;
         protected String matricula;
         
         
-        public Auto(Marca marca, Modelo modelo, int caballospotencia){
+        public Vehiculo(Marca marca, Modelo modelo, int caballospotencia){
             this.marca = marca;
             this.modelo = modelo;
             this.caballospotencia = caballospotencia;
@@ -33,29 +37,34 @@ import java.util.Scanner;
             this.neumaticosmalos = false;
             this.dueno = null;
             this.concesionaria = null;
-            this.nuevo = true;
+            this.condicion = CondicionVehiculo.NUEVO;
             this.valor = 0;
             this.matricula = null;
         }  //Constructor
 
-        private void conducir(){
+        public void conducir(int kilometros){
             if(dueno == null){
-                System.out.print("todavía no puedes conducir"); // El auto no es utilizable 
+                System.out.print("Todavía no puedes conducir"); // El auto no es utilizable 
             }
             else {
-                System.out.println("¿ a cuantos kilómetros quieres conducir?");
-                Scanner sc = new Scanner(System.in);
-                int conduccion = Integer.parseInt(sc.nextLine());
-                sc.close();
-                this.kilometraje = this.kilometraje + conduccion;
-                nuevo = false;
-                conduccion = conduccion / 10; //cunduccion debe ser mallor a 10km
+
+                // 
+                //conduccion = conduccion / 10; //conduccion debe ser mallor a 10km
+                
+
+                /* NOTA: Revisar si algunos atributos de Vehiculo tienen sentido en el proyecto.
                 if(conduccion > this.caballospotencia){ //Estas sobrepasando la potencia permitida
                     this.frenosmalos = true;
                     this.neumaticosmalos = true;
-                    System.out.print("deberías revisar tu auto");
+                    System.out.print("Deberías revisar tu auto");
                 }
+                */
+                this.kilometraje += kilometros; 
+                this.condicion = CondicionVehiculo.USADO;
+            
+
         }
-}
-        
     }
+
+        public abstract double precioDef();        
+}
