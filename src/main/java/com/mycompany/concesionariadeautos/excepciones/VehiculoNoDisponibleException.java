@@ -14,9 +14,6 @@ public class VehiculoNoDisponibleException extends RuntimeException {
      * Creates a new instance of <code>VehiculoNoDisponibleException</code>
      * without detail message.
      */
-    public VehiculoNoDisponibleException() {
-        
-    }
 
     /**
      * Constructs an instance of <code>VehiculoNoDisponibleException</code> with
