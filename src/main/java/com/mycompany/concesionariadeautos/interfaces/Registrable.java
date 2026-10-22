@@ -10,5 +10,7 @@ package com.mycompany.concesionariadeautos.interfaces;
  */
 public interface Registrable {
     int getId();
+
     String obtenerDatosRegistro();
+
 }

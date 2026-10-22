@@ -39,6 +39,36 @@ public class Venta {
         this.precioVenta = vehiculo.precioFinal();
     }
 
+
+    public int getId() {
+        return id;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public Vendedor getVendedor() {
+        return vendedor;
+    }
+
+    public Vehiculo getVehiculo() {
+        return vehiculo;
+    }
+
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
+    public double getPrecioVenta() {
+        return precioVenta;
+    }
+
+    public MetodoPago getMetodoPago() {
+        return metodoPago;
+    }
+
+
     @Override
     public String toString(){
         return "Venta #" + id
