@@ -115,6 +115,8 @@ import java.util.Collections;
         return precioTotal;
     }
 
+    // Métodos de interfaz Registrable
+
     @Override
     public int getId(){
         return id;
@@ -138,7 +140,7 @@ import java.util.Collections;
     }
     
 
-
+    // Getters y setters convencionales
 
 
     public String getNombre(){
