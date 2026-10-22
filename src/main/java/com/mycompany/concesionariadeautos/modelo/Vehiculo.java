@@ -11,7 +11,7 @@ import com.mycompany.concesionariadeautos.enums.CondicionVehiculo;
  *
  * @author alfuxuns
  */
- abstract class Vehiculo{
+public abstract class Vehiculo{
 
         protected Marca marca;
         protected Modelo modelo;
