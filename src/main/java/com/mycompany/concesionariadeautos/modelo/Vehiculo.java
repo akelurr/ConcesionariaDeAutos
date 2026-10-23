@@ -3,26 +3,30 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.concesionariadeautos.modelo;
+import com.mycompany.concesionariadeautos.interfaces.Registrable;
 import com.mycompany.concesionariadeautos.enums.Marca;
 import com.mycompany.concesionariadeautos.enums.Modelo;
 import com.mycompany.concesionariadeautos.enums.CondicionVehiculo;
+import com.mycompany.concesionariadeautos.enums.EstadoVehiculo;
+
 
 /**
  *
  * @author alfuxuns
  */
-public abstract class Vehiculo{
+public abstract class Vehiculo implements Registrable{
 
+        private static int siguienteId = 1;
+
+        private final int id;
         protected Marca marca;
         protected Modelo modelo;
         protected int caballosPotencia;
         protected int kilometraje;
         protected boolean frenosMalos;
         protected boolean neumaticosMalos;
-        protected String duenio;
-        protected String concesionaria;
+        protected EstadoVehiculo estado;
         protected CondicionVehiculo condicion;
-        protected int valor;
         protected String matricula;
         
         public Vehiculo(Marca marca, Modelo modelo, int caballospotencia){
@@ -32,18 +36,25 @@ public abstract class Vehiculo{
             this.kilometraje =  0;
             this.frenosMalos = false;
             this.neumaticosMalos = false;
-            this.duenio = null;
-            this.concesionaria = null;
+            this.estado = EstadoVehiculo.DISPONIBLE;
             this.condicion = CondicionVehiculo.NUEVO;
-            this.valor = 0;
             this.matricula = null;
+            this.id = siguienteId;
         }  //Constructor
+        
+
+
 
         public void conducir(int kilometros){
-            if(duenio == null){
-                System.out.print("Todavía no puedes conducir"); // El auto no es utilizable 
+
+            if (kilometros <= 0){
+                throw new IllegalArgumentException("Los kilometros deben ser positivos");
             }
-            else {
+
+            if (estado != EstadoVehiculo.DISPONIBLE){
+                throw new IllegalStateException("El vehiculo no esta disponible");
+            }
+
 
                 // 
                 //conduccion = conduccion / 10; //conduccion debe ser mallor a 10km
@@ -56,11 +67,9 @@ public abstract class Vehiculo{
                     System.out.print("Deberías revisar tu auto");
                 }
                 */
-                this.kilometraje += kilometros; 
-                this.condicion = CondicionVehiculo.USADO;
+            this.kilometraje += kilometros; 
+            this.condicion = CondicionVehiculo.USADO;
             
-
-        }
     }
 
         public abstract double precioDef();        
@@ -97,4 +106,70 @@ public abstract class Vehiculo{
 
 
         }
+        
+        @Override
+        public int getId(){
+            return id;
+        }
+
+        @Override 
+        public String toString(){
+            return "Vehiculo #" + id
+                + "\nMarca: " + marca
+                + "\nModelo: " + modelo
+                + "\nPotencia: " + caballosPotencia + " HP"
+                + "\nKilometraje: " + kilometraje + " km"
+                + "\nCondicion: " + condicion
+                + "\nEstado: " + estado
+                + "\nPrecio: " + precioFinal();
+        }
+
+        // Getters y setters convencionales
+
+        public Marca getMarca(){
+            return marca;
+        }
+
+        public Modelo getModelo(){
+            return modelo;
+        }
+
+        public int getCaballosPotencia(){
+            return caballosPotencia;
+        }
+
+        public int getKilometraje(){
+            return kilometraje;
+        } 
+
+        public boolean getFrenosMalos(){
+            return frenosMalos;
+        }
+
+        public void setFrenosMalos(boolean newFrenosMalos){
+            frenosMalos = newFrenosMalos; 
+        }
+
+ 
+        public boolean getNeumaticosMalos(){
+            return neumaticosMalos;
+        }
+
+        public void setNeumaticosMalos(boolean newNeumaticosMalos){
+            neumaticosMalos = newNeumaticosMalos; 
+        }
+
+        public CondicionVehiculo getCondicion(){
+            return condicion;
+        }
+
+        public String getMatricula(){
+            return matricula;
+        }
+
+        public void setMatricula(String newMatricula){
+            matricula = newMatricula; 
+        }
+
+    
 }
