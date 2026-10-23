@@ -14,7 +14,7 @@ import com.mycompany.concesionariadeautos.enums.EstadoVehiculo;
  *
  * @author alfuxuns
  */
-public abstract class Vehiculo implements Registrable{
+public abstract class Vehiculo implements Registrable {
 
         private static int siguienteId = 1;
 
@@ -110,6 +110,11 @@ public abstract class Vehiculo implements Registrable{
         @Override
         public int getId(){
             return id;
+        }
+
+        @Override
+        public String obtenerDatosRegistro(){
+            return "Auto #" + id + " - " + marca;
         }
 
         @Override 

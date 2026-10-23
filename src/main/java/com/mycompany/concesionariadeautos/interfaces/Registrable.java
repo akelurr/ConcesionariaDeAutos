@@ -12,5 +12,4 @@ public interface Registrable {
     int getId();
 
     String obtenerDatosRegistro();
-
 }

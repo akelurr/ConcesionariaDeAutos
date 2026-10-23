@@ -9,7 +9,7 @@ import com.mycompany.concesionariadeautos.enums.Marca;
  *
  * @author alfuxuns
  */
-public class AutoDiesel extends Vehiculo {
+public class AutoDiesel extends Vehiculo{
 
     public AutoDiesel(Marca marca, Modelo modelo, int caballosPotencia){
         super(marca, modelo, caballosPotencia);
@@ -20,7 +20,5 @@ public class AutoDiesel extends Vehiculo {
     public double precioDef(){
         return precioModelo() + 40000;
     }
-
-    
     
 }

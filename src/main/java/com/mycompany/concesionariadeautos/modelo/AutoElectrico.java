@@ -10,15 +10,14 @@ import com.mycompany.concesionariadeautos.enums.Modelo;
  *
  * @author alfuxuns
  */
-    public class AutoElectrico extends Vehiculo{
+public class AutoElectrico extends Vehiculo{
         
-        public AutoElectrico(Marca marca, Modelo modelo, int caballospotencia) {
-            super(marca, modelo, caballospotencia);
-        }
-        @Override
-        public double precioDef(){
-            return precioModelo() + 45000;
-        }
-
-
+    public AutoElectrico(Marca marca, Modelo modelo, int caballospotencia) {
+        super(marca, modelo, caballospotencia);
     }
+    @Override
+    public double precioDef(){
+        return precioModelo() + 45000;
+    }
+
+}

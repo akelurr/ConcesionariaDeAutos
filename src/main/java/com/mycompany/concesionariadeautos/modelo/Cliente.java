@@ -88,9 +88,7 @@ import java.util.Collections;
         }
 
         if (historialCompras.contains(venta)){
-            throw new IllegalArgumentException(
-                    "La venta ya fue registrada. "
-                    );
+            throw new IllegalArgumentException("La venta ya fue registrada.");
         }
         historialCompras.add(venta);
     }
