@@ -5,12 +5,15 @@
 package com.mycompany.concesionariadeautos.modelo;
 
 import com.mycompany.concesionariadeautos.enums.MetodoPago;
+
 import java.time.LocalDate;
+import java.io.Serializable;
 /**
  *
  * @author alfuxuns
  */
-public class Venta {
+public class Venta implements Serializable {
+    private static final long SerialVersionUID = 1L;
 
     private static int siguienteId = 1;
 

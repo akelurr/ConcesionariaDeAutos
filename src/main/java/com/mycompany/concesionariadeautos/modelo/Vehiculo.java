@@ -8,13 +8,15 @@ import com.mycompany.concesionariadeautos.enums.Marca;
 import com.mycompany.concesionariadeautos.enums.Modelo;
 import com.mycompany.concesionariadeautos.enums.CondicionVehiculo;
 import com.mycompany.concesionariadeautos.enums.EstadoVehiculo;
+import java.io.Serializable;
 
 
 /**
  *
  * @author alfuxuns
  */
-public abstract class Vehiculo implements Registrable {
+public abstract class Vehiculo implements Serializable, Registrable {
+        private static final long SerialVersionUID = 1L;
 
         private static int siguienteId = 1;
 
@@ -39,7 +41,7 @@ public abstract class Vehiculo implements Registrable {
             this.estado = EstadoVehiculo.DISPONIBLE;
             this.condicion = CondicionVehiculo.NUEVO;
             this.matricula = null;
-            this.id = siguienteId;
+            this.id = siguienteId++;
         }  //Constructor
         
 

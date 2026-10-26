@@ -152,7 +152,7 @@ public class Concesionaria {
         return resultado;
     }
 
-    // Filtrar el invetario por un tipo concreto
+    // Filtrar el inventario por un tipo concreto
     public List<Vehiculo> buscarVehiculosPortipo(int opcion){
 
         ArrayList<Vehiculo> resultado = new ArrayList<>();

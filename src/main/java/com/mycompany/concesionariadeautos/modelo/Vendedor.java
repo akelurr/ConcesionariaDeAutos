@@ -10,6 +10,7 @@ import com.mycompany.concesionariadeautos.interfaces.Rankeable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Collections;
+import java.io.Serializable;
 
 /**
  *
@@ -17,7 +18,8 @@ import java.util.Collections;
  */
 
 
-public class Vendedor implements Registrable, Rankeable {
+public class Vendedor implements Serializable, Registrable, Rankeable {
+    private static final long SerialVersionUID = 1L;
 
     private static int siguienteId = 1;
     private static final double COMISION = 0.05;

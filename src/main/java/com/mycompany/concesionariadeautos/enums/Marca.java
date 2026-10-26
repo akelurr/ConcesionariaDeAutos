@@ -10,7 +10,7 @@ package com.mycompany.concesionariadeautos.enums;
  */
 public enum Marca {
     TOYOTA,
-    HYUNdAI,
+    HYUNDAI,
     KIA,
     CHEVROLET,
     NISSAN,

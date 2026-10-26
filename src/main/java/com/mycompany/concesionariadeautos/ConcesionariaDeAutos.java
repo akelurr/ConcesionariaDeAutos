@@ -1,18 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.mycompany.concesionariadeautos;
+
+import com.mycompany.concesionariadeautos.vista.MenuConsola;
+import com.mycompany.concesionariadeautos.modelo.Cliente;
+import com.mycompany.concesionariadeautos.servicio.Concesionaria;
+
+import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
  * @author alfuxuns
  */
-public class ConcesionariaDeAutos {
-    
-    System.out.println("Helo world!");
+public class ConcesionariaDeAutos{
+        public static void main(String[] args){
 
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
+ 
+        
+
+            
+    } 
+        
 }

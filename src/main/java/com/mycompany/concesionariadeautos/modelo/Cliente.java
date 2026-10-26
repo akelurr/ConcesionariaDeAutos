@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 
 
 package com.mycompany.concesionariadeautos.modelo;
@@ -9,13 +6,17 @@ import com.mycompany.concesionariadeautos.interfaces.Registrable;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.io.Serializable;
 
 
 
 /**
  *
  * @author alfuxuns
- */ public class Cliente implements Registrable{
+ */
+
+public class Cliente implements Serializable,  Registrable{ 
+    private static final long SerialVersionUID = 1;
 
     private static int siguienteId = 1;
 
