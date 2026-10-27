@@ -14,10 +14,10 @@ import java.util.Scanner;
 public class ConcesionariaDeAutos{
         public static void main(String[] args){
 
- 
-        
+            Concesionaria japan = new Concesionaria();
 
-            
-    } 
-        
+            MenuConsola menu = new MenuConsola(japan);
+
+            menu.ejecutar();
+    }  
 }
