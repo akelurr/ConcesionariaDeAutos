@@ -8,6 +8,7 @@ import com.mycompany.concesionariadeautos.modelo.*;
 import com.mycompany.concesionariadeautos.interfaces.Rankeable;
 import com.mycompany.concesionariadeautos.enums.MetodoPago;
 import com.mycompany.concesionariadeautos.excepciones.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Collections;
@@ -18,7 +19,9 @@ import java.util.Collections;
  *
  * @author alfuxuns
  */
-public class Concesionaria {
+public class Concesionaria implements Serializable {
+
+    private static long serialVersionUID = 1L;
 
     private final ArrayList<Vehiculo> inventario;
     private final ArrayList<Cliente> clientes;

@@ -19,7 +19,7 @@ import java.io.Serializable;
 
 
 public class Vendedor implements Serializable, Registrable, Rankeable {
-    private static final long SerialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     private static int siguienteId = 1;
     private static final double COMISION = 0.05;

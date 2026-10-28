@@ -13,7 +13,7 @@ import java.io.Serializable;
  * @author alfuxuns
  */
 public class Venta implements Serializable {
-    private static final long SerialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     private static int siguienteId = 1;
 

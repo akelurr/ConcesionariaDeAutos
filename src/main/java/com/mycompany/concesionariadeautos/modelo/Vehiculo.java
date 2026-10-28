@@ -16,7 +16,7 @@ import java.io.Serializable;
  * @author alfuxuns
  */
 public abstract class Vehiculo implements Serializable, Registrable {
-        private static final long SerialVersionUID = 1L;
+        private static final long serialVersionUID = 1L;
 
         private static int siguienteId = 1;
 
