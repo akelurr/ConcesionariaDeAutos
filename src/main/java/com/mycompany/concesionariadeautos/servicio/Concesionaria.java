@@ -12,6 +12,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 
 
@@ -25,6 +27,7 @@ public class Concesionaria implements Serializable {
 
     private final ArrayList<Vehiculo> inventario;
     private final ArrayList<Cliente> clientes;
+    private final Map<Integer, Cliente> clientesPorId;
     private final ArrayList<Vendedor> vendedores;
     private final ArrayList<Venta> ventas;
     
@@ -33,8 +36,10 @@ public class Concesionaria implements Serializable {
     public Concesionaria(){
         inventario = new ArrayList<>();
         clientes = new ArrayList<>();
+        clientesPorId = new HashMap<>();
         vendedores = new ArrayList<>();
         ventas = new ArrayList<>();
+
     }
 
     // Agregar un nuevo vehiculo al inventario
@@ -61,6 +66,7 @@ public class Concesionaria implements Serializable {
         Cliente cliente = new Cliente(nombre, edad, dinero, ingresoMensual, new ArrayList<Venta>());
 
         clientes.add(cliente);
+        clientesPorId.put(cliente.getId(), cliente);
         return cliente;
     }
 
@@ -69,12 +75,13 @@ public class Concesionaria implements Serializable {
         if (cliente == null){
             throw new IllegalArgumentException("El cliente no puede ser nulo.");
         }
-        for (Cliente existente : clientes){
-            if (existente.getId() == cliente.getId()){
-                throw new IllegalArgumentException("Ya existe un cliente con ese ID.");
-            }
+
+        if (clientesPorId.containsKey(cliente.getId())){
+            throw new IllegalArgumentException("Ya existe un cliente con ese ID");
         }
+
         clientes.add(cliente);
+        clientesPorId.put(cliente.getId(), cliente);
     }
 
     // Crea un registra un vendedor
@@ -106,13 +113,13 @@ public class Concesionaria implements Serializable {
 
     // Buscar un cliente por ID 
     public Cliente buscarClientePorId(int id){
-        for (Cliente cliente : clientes){
-            if (cliente.getId() == id){
-                return cliente;
-            }
+        Cliente cliente = clientesPorId.get(id);
+        if (cliente == null){
+            throw new ClienteNoEncontradoException("No existe un cliente con ID " + id);
         }
-        throw new ClienteNoEncontradoException("No exite un cliente con ID " + id);
+        return cliente;
     } 
+    
 
 
     // Buscar cliente por nombre

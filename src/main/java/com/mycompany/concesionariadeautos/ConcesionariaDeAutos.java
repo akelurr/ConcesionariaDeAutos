@@ -6,8 +6,6 @@ import com.mycompany.concesionariadeautos.servicio.Concesionaria;
 import com.mycompany.concesionariadeautos.persistencia.GestorPersistencia;
 import java.io.IOException;
 
-import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  *

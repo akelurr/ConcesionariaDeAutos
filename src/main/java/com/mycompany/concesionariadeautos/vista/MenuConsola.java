@@ -76,7 +76,7 @@ public class MenuConsola {
     }
 
     void mostrarMenu() {
-        System.out.println("\n========== MENÚ PRINCIPAL ==========");
+        System.out.println("\n========== CONCESIONARIA DE AUTOS ==========");
         System.out.println("1. Registrar vehículo");
         System.out.println("2. Listar vehículos");
         System.out.println("3. Buscar vehículos");
