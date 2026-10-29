@@ -20,6 +20,13 @@ public class Venta implements Serializable {
     // Atributos de la venta
 
     private final int id;
+
+    // Recuperar el contador después de cargar los datos
+
+    public static void actualizarSiguienteId(int ultimoId){
+        siguienteId = Math.max(siguienteId, ultimoId + 1);
+    }
+
     private final Cliente cliente;
     private final Vendedor vendedor;
     private final Vehiculo vehiculo;

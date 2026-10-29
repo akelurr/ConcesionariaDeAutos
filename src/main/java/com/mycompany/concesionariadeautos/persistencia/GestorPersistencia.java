@@ -70,7 +70,9 @@ public class GestorPersistencia {
                 throw new IOException("El archivo no contiene una concesionaria valida.");
             }
 
-            return (Concesionaria) objeto;
+            Concesionaria concesionaria = (Concesionaria) objeto;
+            concesionaria.restaurarContadores();
+            return concesionaria;
         }
     }
 

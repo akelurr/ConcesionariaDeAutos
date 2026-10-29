@@ -22,6 +22,12 @@ public class Vendedor implements Serializable, Registrable, Rankeable {
     private static final long serialVersionUID = 1L;
 
     private static int siguienteId = 1;
+    
+    // Recuperar el contador después de cargar los datos
+    public static void actualizarSiguienteId(int ultimoId) {
+        siguienteId = Math.max(siguienteId, ultimoId + 1);
+    }
+
     private static final double COMISION = 0.05;
 
     // Atributos

@@ -20,9 +20,14 @@ public class Cliente implements Serializable,  Registrable{
 
     private static int siguienteId = 1;
 
-    // Atributos de cliente
-
     private final int id;
+    
+    // Recuperar el contador después de cargar los datos
+    public static void actualizarSiguienteId(int ultimoId){
+        siguienteId = Math.max(siguienteId, ultimoId + 1);
+    }
+
+    // Atributos de cliente
     private String nombre;
     private int edad;
     private double dinero;

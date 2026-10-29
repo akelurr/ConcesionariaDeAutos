@@ -325,10 +325,33 @@ public class Concesionaria implements Serializable {
         return false;
     }
 
+
     // Validar textos
     private void validarNombre(String nombre){
         if (nombre == null || nombre.isBlank()){
             throw new IllegalArgumentException("El nombre no puede estar vacio");
         }
     }
+
+    // Restaurar contadores
+
+    public void restaurarContadores(){
+
+        for (Vehiculo vehiculo : inventario){
+            Vehiculo.actualizarSiguienteId(vehiculo.getId());
+        }
+
+        for (Cliente cliente : clientes){
+            Cliente.actualizarSiguienteId(cliente.getId());
+        }
+
+        for (Vendedor vendedor : vendedores){
+            Vendedor.actualizarSiguienteId(vendedor.getId());
+        }
+
+        for (Venta venta: ventas){
+            Venta.actualizarSiguienteId(venta.getId());
+            Vehiculo.actualizarSiguienteId(venta.getVehiculo().getId());
+        }
+    }    
 }

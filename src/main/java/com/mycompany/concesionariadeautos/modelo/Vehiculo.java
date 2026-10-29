@@ -21,6 +21,11 @@ public abstract class Vehiculo implements Serializable, Registrable {
         private static int siguienteId = 1;
 
         private final int id;
+
+        // Recuperar el contador después de cargar los datos
+        public static void actualizarSiguienteId(int ultimoId){
+            siguienteId = Math.max(siguienteId, ultimoId + 1);
+        }
         protected Marca marca;
         protected Modelo modelo;
         protected int caballosPotencia;
