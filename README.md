@@ -114,8 +114,6 @@ git clone https://github.com/akelurr/ConcesionariaDeAutos.git
 cd ConcesionariaDeAutos
 ```
 
-> El repositorio es privado; para clonarlo necesitas una cuenta con acceso autorizado.
-
 Compila y ejecuta desde la raíz del proyecto:
 
 ```bash
