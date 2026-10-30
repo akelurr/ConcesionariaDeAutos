@@ -14,20 +14,14 @@ import java.io.IOException;
 public class ConcesionariaDeAutos{
         public static void main(String[] args){
 
+
             try{
-
             Concesionaria japan = GestorPersistencia.cargar();
-
-            
-
-
             MenuConsola menu = new MenuConsola(japan);
-
             menu.ejecutar();
-
-
             } catch (IOException | ClassNotFoundException ex){
                 System.err.println("Error al cargar datos: " + ex.getMessage());
             }
+
     }  
 }
